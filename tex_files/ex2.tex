@@ -1,0 +1,70 @@
+\newpage
+\section{Metode sistematice eficiente}
+
+$N = 3$, $L = 5$, $n_{SIC} = 1$, $n_{SIT} = 1$
+\begin{table}[ht]  %preferinte: mai intai h - here apoi t- top, htb-, b-bottom
+\centering
+\caption{Analiza complexitatii}
+\label{tab:exemplu_tabel}       % eticheta trebuie sa fie unica
+
+\begin{tabular}{|p{5cm}||c|l|r|p{4cm}|}  \hline  % l = left, c = center, r = right
+Metoda & numar de ecuatii  \\ \hline \hline
+Kirchhoff clasic & $2L = 10$\\\hline
+Kirchhoff in curenti & $L - N + 1 = 3$\\\hline
+Kirchhoff in tensiuni  & $N - 1 = 2$\\  \hline
+Curenti de coarde & $L - N + 1 - n_{SIC} = 2$\\\hline
+Tensiuni in ramuri & $N - 1 - n_{SIT} = 1$\\\hline
+\end{tabular}
+\end{table}
+
+Vom rezolva circuitul cu metoda potentialelor nodurilor.
+
+\begin{equation}
+\left\{
+\begin{array}{ccl} % c - centrat, l - aliniat la stanga
+V_2 & = & 0 \\
+V_0 & = & E_5 \\
+V_1(\frac{1}{R_1} + \frac{1}{R_2}) - V_0\frac{1}{R_2} - V_2\frac{1}{R_1} & = & I_4
+\end{array}  
+\right. \nonumber % marcarea inchiderii - falsa; blocarea numerotarii
+\end{equation}
+
+Si rezulta
+
+\begin{equation}
+\left\{
+\begin{array}{ccl} % c - centrat, l - aliniat la stanga
+V_0 & = & 1 \\
+V_1 & = & 2 \\
+V_2 & = & 0
+\end{array}  
+\right. \nonumber % marcarea inchiderii - falsa; blocarea numerotarii
+\end{equation}
+
+deci
+
+\begin{equation}
+\left\{
+\begin{array}{ccl} % c - centrat, l - aliniat la stanga
+I_1 & = & \frac{V_1 - V_0}{R_1} = 2A \\
+I_2 & = & \frac{V_1 - V_2}{R_2} = 1A \\
+I_3 & = & \frac{V_0 - V_2}{R_3} = 1A \\
+I_4 & = & J_4 = 3A \\
+I_5 & = & I_3 - I_1 = -1A
+\end{array}  
+\right. \nonumber % marcarea inchiderii - falsa; blocarea numerotarii
+\end{equation}
+
+si 
+
+\begin{equation}
+\left\{
+\begin{array}{ccl} % c - centrat, l - aliniat la stanga
+U_1 & = & V_0 - V_1 = 1V \\
+U_2 & = & V_1 - V_2 = 2V \\
+U_3 & = & V_2 - V_0 = -1V \\
+U_4 & = & V_1 - V_2 = 2V \\
+U_5 & = & E_5 = 1V
+\end{array}  
+\right. \nonumber % marcarea inchiderii - falsa; blocarea numerotarii
+\end{equation}
